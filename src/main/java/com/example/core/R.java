@@ -2,10 +2,9 @@ package com.example.core;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
- * 操作消息提醒
+ * 接口返回
  *
  * @author chenzz
  */
@@ -13,13 +12,9 @@ public class R extends HashMap<String, Object> {
 
     private static final long serialVersionUID = 1L;
 
-    public R() {
+    private R() {
         put("code", 200);
         put("msg", "success");
-    }
-
-    public static R error() {
-        return error(500, "操作失败,未知异常");
     }
 
     public static R error(String msg) {
@@ -39,12 +34,6 @@ public class R extends HashMap<String, Object> {
         return r;
     }
 
-    public static R ok(Map<String, Object> map) {
-        R r = new R();
-        r.putAll(map);
-        return r;
-    }
-
     public static R ok() {
         return new R();
     }
@@ -52,8 +41,6 @@ public class R extends HashMap<String, Object> {
     //-------------------------------
 
     public R data(Object o) {
-        // super.put("data", o);
-        // return this;
         return put("data", o);
     }
 
