@@ -4,6 +4,7 @@ import com.example.model.Message;
 import com.example.repository.MessageRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -40,6 +41,13 @@ public class MessageController {
     public ModelAndView create(@Valid Message message, BindingResult result,
                                RedirectAttributes redirect) {
         if (result.hasErrors()) {
+            System.out.println("------错误信息------");
+            result.getAllErrors().forEach((error) -> {
+                FieldError fieldError = (FieldError) error;
+                System.out.println(fieldError.getField() + ":" + fieldError.getDefaultMessage());
+
+            });
+            //-------------------------
             return new ModelAndView("messages/form", "formErrors", result.getAllErrors());
         }
         message = this.messageRepository.save(message);

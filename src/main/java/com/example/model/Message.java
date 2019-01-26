@@ -1,7 +1,12 @@
 package com.example.model;
 
+// import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Calendar;
+
+// import javax.validation.constraints.Pattern;
 
 
 public class Message {
@@ -9,9 +14,12 @@ public class Message {
     private Long id;
 
     @NotEmpty(message = "Text is required.")
+    //@Pattern(regexp="\\d+")
     private String text;
 
     @NotEmpty(message = "Summary is required.")
+    //@Range(min = 0, max = 10)
+    @Size(min = 5, max = 30, message = "Summary内容长度需要在{min}-{max}之间")
     private String summary;
 
     private Calendar created = Calendar.getInstance();
