@@ -30,7 +30,7 @@ public class AllRequestAroundAspect {
     /***
      * 拦截所有控制器
      */
-    @Pointcut("@within(org.springframework.stereotype.Controller) || within(org.springframework.web.bind.annotation.RestController)")
+    @Pointcut("@within(org.springframework.stereotype.Controller) || @within(org.springframework.web.bind.annotation.RestController)")
     public void allRequest() {
     }
 
