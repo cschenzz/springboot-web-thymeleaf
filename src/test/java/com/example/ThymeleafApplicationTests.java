@@ -41,7 +41,7 @@ public class ThymeleafApplicationTests {
 	public void testCreate() {
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
 		map.set("text", "FOO text");
-		map.set("summary", "FOO");
+		map.set("summary", "FOO00");
 		URI location = this.restTemplate.postForLocation("/", map);
 		assertThat(location.toString()).contains("localhost:" + this.port);
 	}
