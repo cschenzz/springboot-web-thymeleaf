@@ -2,7 +2,6 @@ package com.example.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -56,13 +55,4 @@ public class AllRequestAroundAspect {
         return resultObj;
     }
 
-    /***
-     * 抛出异常执行
-     * @param joinPoint
-     * @param e
-     */
-    @AfterThrowing(pointcut = "allRequest()", throwing = "e")
-    public void doAfterThrowing(JoinPoint joinPoint, Throwable e) {
-        logger.error(e.getLocalizedMessage());
-    }
 }
