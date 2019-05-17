@@ -29,6 +29,7 @@ public class ThymeleafApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ThymeleafApplication.class, args);
+        System.out.println("~~~~~~(_o_)----99999.running----(^o^)~~~~~~~");
     }
 
 }
