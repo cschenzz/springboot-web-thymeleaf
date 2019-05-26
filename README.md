@@ -11,3 +11,5 @@
 `mvn clean package -Dmaven.test.skip=true`
 
 `mvnw clean package -Dmaven.test.skip=true`
+
+在powershell和git shell中执行mvnw会提示错误，请使用当前目录执行命令`./mvnw clean package`
