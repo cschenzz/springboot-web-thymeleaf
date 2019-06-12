@@ -21,3 +21,9 @@
 `mvnw clean package -Dmaven.test.skip=true`
 
 在powershell和git shell中执行mvnw会提示错误，请使用当前目录执行命令`./mvnw clean package`
+
+### 运行截图
+
+![](screenshot/home.png)
+![](screenshot/detail.png)
+![接口](screenshot/api-json.png)
