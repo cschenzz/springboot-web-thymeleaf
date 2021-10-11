@@ -9,6 +9,11 @@
 - 执行`java -jar xxx.jar`
 - 启动成功后浏览页面查看是否正常运行
 
+### github action
+
+> https://juejin.cn/post/6844904137751003144
+
+
 ### 仓库地址
 
 - [github仓库](https://github.com/cschenzz/springboot-web-thymeleaf)
